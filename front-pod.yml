@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: front-pod
+  labels:
+    name: front-pod
+spec:
+  containers:
+  - name: google-sample-image
+    image: gcr.io/google-samples/gb-frontend:v4
+    ports:
+      - containerPort: 80
