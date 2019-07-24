@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front-end-deployment
+  labels:
+    app: google-samples-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      name: front-end-pod
+      app: google-samples-app
+  template:
+    metadata:
+      name: front-end-pod
+      labels:
+        name: front-end-pod
+        app: google-samples-app
+    spec:
+      containers:
+      - name: google-sample
+        image: gcr.io/google-samples/gb-frontend:v4
+        ports:
+          - containerPort: 80
+        
